@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ривер — ресторан на Монастырской, 60 · Пермь</title>
+  <meta name="description" content="Ресторан «Ривер» в Перми, Монастырская, 60: завтраки, бизнес-ланч, паста, стейки и морепродукты, десерты и коктейли. По будням с 8:00, в выходные с 10:00.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#eaf4fa">
+  <meta property="og:title" content="Ривер — ресторан на Монастырской, 60">
+  <meta property="og:image" content="img/hall-sunset.jpg">
+  <link rel="icon" href="img/logo-word-navy.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap&subset=cyrillic" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header" id="header">
+  <div class="container header__row">
+    <a href="#top" class="brand" aria-label="Ривер — на главную">
+      <img src="img/logo-word-navy.png" alt="River" width="86" height="32">
+    </a>
+    <nav class="nav" id="nav" aria-label="Основное меню">
+      <a href="#now">Сейчас подают</a>
+      <a href="#menu">Меню</a>
+      <a href="#space">Зал</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#contacts">Контакты</a>
+      <a href="tel:+73422368000" class="nav__phone">+7 (342) 236-80-00</a>
+    </nav>
+    <a class="btn btn--navy btn--sm header__cta" href="#book">Забронировать</a>
+    <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__sky" aria-hidden="true"></div>
+    <div class="container hero__grid">
+      <div class="hero__text">
+        <p class="eyebrow">Ресторан · Пермь · Монастырская, 60</p>
+        <h1 class="hero__title">
+          <img src="img/logo-word-navy.png" alt="River" class="hero__logo" width="686" height="255">
+          <span class="hero__tag">Еда. Напитки. <em>Атмосфера.</em></span>
+        </h1>
+        <p class="hero__lead">Светлый зал с закатным панно на стене, синие бархатные кресла и меню на весь день: сырники утром, суп и паста в обед, рибай, осьминог и коктейль вечером.</p>
+        <div class="hero__actions">
+          <a class="btn btn--navy" href="#book">Забронировать стол</a>
+          <a class="btn btn--ghost" href="#menu">Смотреть меню</a>
+        </div>
+        <ul class="hero__facts">
+          <li><b>4,8</b><span>★ 105 оценок<br>на Яндекс Картах</span></li>
+          <li><b>8:00</b><span>открываемся<br>по будням</span></li>
+          <li class="hero__status"><i class="dot" id="heroDot"></i><span><span id="heroStatus">…</span><br><span id="heroStatusText" class="muted"></span></span></li>
+        </ul>
+      </div>
+      <div class="hero__visual">
+        <div class="hero__sun" aria-hidden="true"></div>
+        <figure class="arch arch--main">
+          <img src="img/hall-sunset.jpg" alt="Зал «Ривера»: панно с закатом, синие бархатные кресла и мраморные столы" width="960" height="1280">
+        </figure>
+        <figure class="arch arch--small">
+          <img src="img/canele.jpg" alt="Канеле" width="853" height="1280" loading="lazy">
+        </figure>
+        <p class="hero__note">Завтраки — до 16:00</p>
+      </div>
+    </div>
+    <svg class="wave wave--bottom" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 50 C 180 10, 360 10, 540 46 S 900 86, 1080 50 S 1320 14, 1440 38 V90 H0Z"/></svg>
+  </section>
+
+  <!-- ЧТО СЕЙЧАС ПОДАЮТ -->
+  <section class="now" id="now">
+    <div class="container">
+      <div class="now__head">
+        <p class="eyebrow">Живое меню по пермскому времени</p>
+        <h2 class="h2">Что сейчас <em>подают</em></h2>
+        <p class="now__clock"><span id="permClock">--:--</span> в Перми · <span id="nowState">…</span></p>
+      </div>
+
+      <div class="dayline" aria-hidden="true">
+        <svg viewBox="0 0 600 170" class="dayline__svg">
+          <path class="dayline__arc" d="M30 150 A 270 130 0 0 1 570 150" />
+          <path class="dayline__arc dayline__arc--done" id="arcDone" d="M30 150 A 270 130 0 0 1 570 150" />
+          <path class="dayline__water" d="M0 158 q 25 -8 50 0 t 50 0 t 50 0 t 50 0 t 50 0 t 50 0 t 50 0 t 50 0 t 50 0 t 50 0 t 50 0 t 50 0" />
+          <circle class="dayline__sun" id="sunDot" cx="30" cy="150" r="13" />
+        </svg>
+        <div class="dayline__labels" id="dayLabels"></div>
+      </div>
+
+      <div class="phases" role="tablist" aria-label="Время дня">
+        <button class="phase" role="tab" data-phase="morning" aria-selected="false"><b>Утро</b><span id="phMorning">8:00–12:00</span></button>
+        <button class="phase" role="tab" data-phase="day" aria-selected="false"><b>День</b><span>12:00–17:00</span></button>
+        <button class="phase" role="tab" data-phase="evening" aria-selected="false"><b>Вечер</b><span id="phEvening">17:00–22:00</span></button>
+      </div>
+
+      <div class="serve" id="serve" role="tabpanel" aria-live="polite">
+        <figure class="serve__img"><img id="serveImg" src="img/morning-table.jpg" alt="" width="960" height="1024"></figure>
+        <div class="serve__body">
+          <p class="serve__kicker" id="serveKicker"></p>
+          <h3 class="serve__title" id="serveTitle"></h3>
+          <p class="serve__text" id="serveText"></p>
+          <ul class="serve__list" id="serveList"></ul>
+          <p class="serve__foot" id="serveFoot"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- О МЕСТЕ -->
+  <section class="about" id="space">
+    <svg class="wave wave--top" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40 C 220 80, 420 80, 640 44 S 1060 6, 1260 36 S 1400 60, 1440 50 V0 H0Z"/></svg>
+    <div class="container about__grid">
+      <div class="about__text">
+        <p class="eyebrow">Первый этаж на Монастырской</p>
+        <h2 class="h2">Свет, бархат<br>и <em>закат на стене</em></h2>
+        <p>Мраморные столы, глубокие синие кресла, лёгкие драпировки под потолком и большое панно с солнцем, которое гости отмечают в отзывах первым делом. Здесь удобно позавтракать перед работой, провести деловую встречу за обедом или задержаться вечером на ужин.</p>
+        <ul class="tags">
+          <li>Wi-Fi</li><li>Кофе с собой</li><li>Еда навынос</li><li>Можно с собакой до 35 см</li><li>Подарочные сертификаты</li><li>Оплата картой</li><li>Вход доступен для колясок</li>
+        </ul>
+        <div class="about__check"><span>Средний счёт</span><b>1 500–2 000 ₽</b></div>
+      </div>
+      <div class="about__photos" id="aboutPhotos">
+        <img src="img/arches-sofa.jpg" alt="Диван у окна и арочные ширмы" loading="lazy" width="960" height="1280">
+        <img src="img/bar.jpg" alt="Барная стойка" loading="lazy" width="960" height="1280">
+        <img src="img/hall-sun-white.jpg" alt="Зал с панно-закатом" loading="lazy" width="960" height="1280">
+      </div>
+    </div>
+
+    <div class="container events">
+      <h3 class="h3">Для каких поводов</h3>
+      <ul class="events__list">
+        <li>Деловая встреча</li><li>Семейный ужин</li><li>День рождения</li><li>Свидание</li><li>Корпоратив</li><li>Свадьба</li><li>Банкет</li>
+      </ul>
+      <a class="link-arrow" href="#book">Обсудить мероприятие →</a>
+    </div>
+  </section>
+
+  <!-- МЕНЮ -->
+  <section class="menu" id="menu">
+    <div class="container">
+      <div class="menu__head">
+        <p class="eyebrow">Основное меню</p>
+        <h2 class="h2">Меню <em>«Ривера»</em></h2>
+        <p class="muted">Позиции и цены — по меню ресторана на Яндекс Картах. Актуальные цены и сезонные предложения уточняйте у официанта.</p>
+      </div>
+      <div class="tabs" id="menuTabs" role="tablist" aria-label="Категории меню"></div>
+      <div class="menu__list" id="menuList" role="tabpanel"></div>
+    </div>
+  </section>
+
+  <!-- ГАЛЕРЕЯ -->
+  <section class="gallery" id="gallery">
+    <svg class="wave wave--top wave--sand" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40 C 220 80, 420 80, 640 44 S 1060 6, 1260 36 S 1400 60, 1440 50 V0 H0Z"/></svg>
+    <div class="container">
+      <div class="gallery__head">
+        <p class="eyebrow">Фотографии</p>
+        <h2 class="h2">Зал и <em>тарелки</em></h2>
+      </div>
+      <div class="gallery__grid" id="galleryGrid">
+        <figure class="g g--tall"><img src="img/hall-sun-2.jpg" alt="Зал с панно" loading="lazy"></figure>
+        <figure class="g"><img src="img/tiramisu.jpg" alt="Клубничное тирамису" loading="lazy"><figcaption>Клубничное тирамису</figcaption></figure>
+        <figure class="g"><img src="img/hall-ceiling.jpg" alt="Драпировки под потолком" loading="lazy"></figure>
+        <figure class="g g--tall"><img src="img/hall-flowers.jpg" alt="Цветы на столе на фоне панно" loading="lazy"></figure>
+        <figure class="g"><img src="img/trout-caesar.jpg" alt="Горячее и салат" loading="lazy"><figcaption>Горячее и салат</figcaption></figure>
+        <figure class="g"><img src="img/arches.jpg" alt="Арочные ширмы и кресло" loading="lazy"></figure>
+        <figure class="g"><img src="img/canele-2.jpg" alt="Канеле" loading="lazy"><figcaption>Канеле</figcaption></figure>
+        <figure class="g g--tall"><img src="img/sun-evening.jpg" alt="Панно-закат вечером" loading="lazy"></figure>
+        <figure class="g"><img src="img/salad-cocktail.jpg" alt="Салат и коктейль" loading="lazy"><figcaption>Салат и коктейль</figcaption></figure>
+        <figure class="g"><img src="img/hall-wide.jpg" alt="Общий вид зала" loading="lazy"></figure>
+        <figure class="g"><img src="img/dishes-coffee.jpg" alt="Блюда и кофе" loading="lazy"><figcaption>Обед</figcaption></figure>
+        <figure class="g g--tall"><img src="img/hall-sun-4.jpg" alt="Столы у панно" loading="lazy"></figure>
+        <figure class="g"><img src="img/drink-mint.jpg" alt="Напиток с мятой" loading="lazy"><figcaption>Напитки</figcaption></figure>
+        <figure class="g"><img src="img/hall-lights.jpg" alt="Зал и светильники" loading="lazy"></figure>
+        <figure class="g"><img src="img/salad.jpg" alt="Салат" loading="lazy"><figcaption>Салаты</figcaption></figure>
+        <figure class="g"><img src="img/hall-day.jpg" alt="Зал днём" loading="lazy"></figure>
+        <figure class="g"><img src="img/beef-plate.jpg" alt="Горячее с овощами" loading="lazy"><figcaption>Горячее</figcaption></figure>
+        <figure class="g"><img src="img/hall-sofa.jpg" alt="Диваны вдоль стены" loading="lazy"></figure>
+        <figure class="g"><img src="img/drink-pina.jpg" alt="Напиток" loading="lazy"><figcaption>Напитки</figcaption></figure>
+        <figure class="g"><img src="img/facade.jpg" alt="Вход в ресторан на Монастырской, 60" loading="lazy"><figcaption>Вход с Монастырской</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ОТЗЫВЫ -->
+  <section class="reviews" id="reviews">
+    <div class="container">
+      <div class="reviews__head">
+        <p class="eyebrow">Яндекс Карты</p>
+        <h2 class="h2"><span class="big">4,8</span> <em>из 5</em></h2>
+        <p class="muted">105 оценок гостей</p>
+      </div>
+      <div class="reviews__grid">
+        <blockquote>
+          <p>В первую очередь отмечаешь приятный интерьер, очень красивое панно на стене, выглядит стильно. Персонал молодой, но обслуживание отличное, официанты внимательны к гостям.</p>
+          <cite>Гость · Яндекс Карты</cite>
+        </blockquote>
+        <blockquote>
+          <p>Сезонное меню из сморчков было восхитительным! Особенно впечатлило ризотто. Полный восторг вызвал салат с уткой и инжиром.</p>
+          <cite>Гость · Яндекс Карты</cite>
+        </blockquote>
+        <blockquote>
+          <p>Еда вкусная, без каких-то невероятных сочетаний, а просто то, что можно есть каждый день, и этому способствует ещё наличие бизнес-ланча.</p>
+          <cite>Гость · Яндекс Карты</cite>
+        </blockquote>
+      </div>
+      <a class="link-arrow" href="https://yandex.ru/maps/org/river/161909781121/reviews/" target="_blank" rel="noopener">Все отзывы на Яндекс Картах →</a>
+    </div>
+  </section>
+
+  <!-- БРОНЬ -->
+  <section class="book" id="book">
+    <svg class="wave wave--top wave--sky" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40 C 220 80, 420 80, 640 44 S 1060 6, 1260 36 S 1400 60, 1440 50 V0 H0Z"/></svg>
+    <div class="container book__grid">
+      <div class="book__text">
+        <p class="eyebrow">Бронь стола</p>
+        <h2 class="h2">Оставим для вас <em>стол</em></h2>
+        <p>Заполните форму — откроется WhatsApp с готовым сообщением для ресторана. Или просто позвоните.</p>
+        <div class="book__links">
+          <a class="btn btn--navy" href="tel:+73422368000">Позвонить: +7 (342) 236-80-00</a>
+          <a class="chip" href="https://t.me/riverperm" target="_blank" rel="noopener">Telegram</a>
+          <a class="chip" href="https://vk.ru/river_perm" target="_blank" rel="noopener">ВКонтакте</a>
+        </div>
+      </div>
+      <form class="form" id="bookForm" novalidate>
+        <div class="form__row">
+          <label>Имя<input name="name" required autocomplete="given-name" placeholder="Как к вам обращаться"></label>
+          <label>Гостей<select name="guests"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10+</option></select></label>
+        </div>
+        <div class="form__row">
+          <label>Дата<input type="date" name="date" required></label>
+          <label>Время<select name="time" id="timeSelect"></select></label>
+        </div>
+        <label>Комментарий<textarea name="comment" rows="3" placeholder="Повод, пожелания по столу"></textarea></label>
+        <button class="btn btn--sun" type="submit">Отправить в WhatsApp</button>
+        <p class="form__note" id="formNote">Бронь подтверждает администратор ресторана.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- КОНТАКТЫ -->
+  <section class="contacts" id="contacts">
+    <div class="container contacts__grid">
+      <div class="contacts__info">
+        <p class="eyebrow">Как нас найти</p>
+        <h2 class="h2">Монастырская, <em>60</em></h2>
+        <p class="contacts__addr">Пермь, Монастырская ул., 60 · 1 этаж<br><span class="muted">в центре, у набережной Камы</span></p>
+        <p><a class="contacts__phone" href="tel:+73422368000">+7 (342) 236-80-00</a></p>
+        <div class="hours">
+          <p class="hours__status"><i class="dot" id="openDot"></i><b id="openNow">…</b> <span id="openNowText" class="muted"></span></p>
+          <p class="hours__list" id="hoursList"></p>
+        </div>
+        <div class="social">
+          <a href="https://wa.me/73422368000" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="https://t.me/riverperm" target="_blank" rel="noopener">Telegram</a>
+          <a href="https://vk.ru/river_perm" target="_blank" rel="noopener">ВКонтакте</a>
+          <a href="https://ok.ru/group/70000033348963" target="_blank" rel="noopener">Одноклассники</a>
+        </div>
+      </div>
+      <div class="map">
+        <a class="map__frame" href="https://yandex.ru/maps/org/river/161909781121/" target="_blank" rel="noopener" aria-label="Открыть «Ривер» на Яндекс Картах">
+          <img src="img/map.png" alt="Карта: Монастырская, 60" width="650" height="450" loading="lazy">
+          <span class="map__pin" aria-hidden="true"><span class="map__sun"></span><span class="map__label">River</span></span>
+        </a>
+        <div class="map__actions">
+          <a class="btn btn--navy btn--sm" href="https://yandex.ru/maps/?rtext=~58.013235%2C56.218978&rtt=auto" target="_blank" rel="noopener">Маршрут</a>
+          <a class="btn btn--ghost btn--sm" href="https://yandex.ru/maps/org/river/161909781121/" target="_blank" rel="noopener">Открыть в Яндекс Картах</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <svg class="wave wave--top wave--navy" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40 C 220 80, 420 80, 640 44 S 1060 6, 1260 36 S 1400 60, 1440 50 V0 H0Z"/></svg>
+  <div class="container footer__row">
+    <img src="img/logo-white.png" alt="River — Еда. Напитки. Атмосфера." width="160" height="82" loading="lazy">
+    <p>Ресторан «Ривер» · Пермь, Монастырская ул., 60<br><a href="tel:+73422368000">+7 (342) 236-80-00</a></p>
+    <p class="muted">Пн–Чт 8:00–22:00 · Пт 8:00–23:00<br>Сб–Вс 10:00–23:00</p>
+  </div>
+</footer>
+
+<div class="mbar" id="mbar">
+  <a href="tel:+73422368000" class="mbar__call">Позвонить</a>
+  <a href="#book" class="mbar__book">Забронировать</a>
+</div>
+
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lightbox__close" aria-label="Закрыть">×</button>
+  <button class="lightbox__nav lightbox__prev" aria-label="Предыдущее фото">‹</button>
+  <img alt="">
+  <button class="lightbox__nav lightbox__next" aria-label="Следующее фото">›</button>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
